@@ -1,13 +1,25 @@
+body {
+    background-color: #62382b;
+}
+
 header {
     display: grid;
     grid-template-columns: 1fr repeat(2, auto) 1fr;
     grid-column-gap: 5px;
     justify-items: center;
+    color: white;
     
+}
+
+header h1 {
+    font-size: 4em;
+    margin: auto;
 }
 
 .logo {
     margin-right: auto;
+    height: 128px;
+    width: 128px;
 }
 
 .titleContainer {
@@ -18,3 +30,30 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
+.menuBar {
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #5e8eb4;
+}
+  
+li {
+    float: left;
+}
+  
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+li a:hover {
+    background-color: #111;
+}
