@@ -6,7 +6,11 @@
     <title>Opus</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <?php include('header.php');?> 
+
+    <h1 style="color:white">placeholder - schedule.php</h1> <!-- remove this later -->
+
 </body>
 </html>

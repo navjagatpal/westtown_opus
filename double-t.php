@@ -10,5 +10,7 @@
 <body>
     <?php include('header.php');?> 
     
+    <h1 style="color:white">placeholder - double-t.php</h1> <!-- remove this later -->
+
 </body>
 </html>

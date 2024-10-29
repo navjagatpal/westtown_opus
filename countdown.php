@@ -9,6 +9,8 @@
 
 <body>
     <?php include('header.php');?> 
+
+    <h1 style="color:white">placeholder - countdown.php</h1> <!-- remove this later -->
     
 </body>
 </html>
