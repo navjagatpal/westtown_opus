@@ -7,7 +7,7 @@
 </header>
 <div class="menuBar">
         <ul>
-            <li><a href="main.php">Schedule</a></li>
+            <li><a href="schedule.php">Schedule</a></li>
             <li><a href="request-switch.php">Request to Switch</a></li>
             <li><a href="double-t.php">Double-T</a></li>
             <li><a href="countdown.php">Countdown</a></li>
