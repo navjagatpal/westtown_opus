@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <script>
+        <script>
             function deleteRow(i) {
                 mainform = document.getElementById("mainform");
                 mainform.rowToDelete.value = i;
@@ -13,8 +13,11 @@
                 updateform.submit();
             }
         </script>
+        <link rel="stylesheet" href="style.css">
     </head>
-</html>
+
+    <body>
+        <?php include('header.php');?> 
 
 <?php
 $db = new mysqli('localhost', 'root', '', 'test');
@@ -69,3 +72,5 @@ if(isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['gr
     <input type="submit" name= "submit2">
 </form>
 
+</body>
+</html>
