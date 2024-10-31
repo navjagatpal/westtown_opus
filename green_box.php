@@ -1,9 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+    <script>
+            function deleteRow(i) {
+                mainform = document.getElementById("mainform");
+                mainform.rowToDelete.value = i;
+                mainform.submit();
+            }
+            function updateRow(i) {
+                updateform = document.getElementById("Updateform");
+                updateform.rowToUpdate.value = i;
+                updateform.submit();
+            }
+        </script>
+    </head>
 </html>
 
 <?php
 $db = new mysqli('localhost', 'root', '', 'test');
+
+
+if(isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['green_box_id'])){
+    $first_name = $_POST ["first_name"];
+    $last_name = $_POST ["last_name"];
+    $green_box_id = $_POST ["green_box_id"];
+    $d = strtotime("+6 days");
+    $return_date = date("Y-m-d", $d);
+    $sql = "UPDATE students_2024 SET green_box_id=$green_box_id , return_date='$return_date' WHERE first_name='$first_name'";
+    echo $sql;
+    $db->query($sql);
+    }
+
+
 ?>
 
 
@@ -12,7 +40,7 @@ $db = new mysqli('localhost', 'root', '', 'test');
         echo "<tr>";
                 echo "<th>ID</th>";
                 echo "<th>Last Name</th>";
-                echo "<th>First Name Type</th>";
+                echo "<th>First Name</th>";
                 echo "<th>Green Box ID</th>";
                 echo "<th>Returning Date</th>";
         echo "</tr>";
@@ -33,12 +61,11 @@ $db = new mysqli('localhost', 'root', '', 'test');
 </table>
 
 
+<form id = "Updateform" action="green_box.php"  method="post" >
+    Updating Form <br>
+    first name: <input type="text" name="first_name"  placeholder="first name ..."  required> <br>
+    last name:  <input type="text" name="last_name" placeholder="last_name ... " required> <br>
+    green box id: <input type="text" name="green_box_id" placeholder="green box ... " required> <br>
+    <input type="submit" name= "submit2">
+</form>
 
-Green box 
-    Create table have  every student name nd collumns of having green box or not 
-    Create a form to do that 
-    Do CRUD on that table 
-    show that table on page 
-    Initiate timer for the student to return 
-    Send emails/text to student to return after a specific amount of time 
-    remove the student and the green box from the table. 
