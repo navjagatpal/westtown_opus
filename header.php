@@ -8,7 +8,7 @@
 <div class="menuBar">
         <ul>
             <li><a href="schedule.php">Schedule</a></li>
-            <li><a href="green-boxes.php">Green Boxes</a></li>
+            <li><a href="green_box.php">Green Boxes</a></li>
             <li><a href="request-switch.php">Request to Switch</a></li>
             <li><a href="double-t.php">Double-T</a></li>
             <li><a href="countdown.php">Countdown</a></li>
