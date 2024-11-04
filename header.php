@@ -5,6 +5,7 @@
             <h3>Work Program Management</h3>
         </div>
 </header>
+<!-- Hello from Teacher Nav -->
 <div class="menuBar">
         <ul>
             <li><a href="schedule.php">Schedule</a></li>
