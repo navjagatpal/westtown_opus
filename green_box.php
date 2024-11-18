@@ -18,6 +18,7 @@
 
 <?php
 $db = new mysqli('localhost', 'root', '', 'test');
+
 if(isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['green_box_id'])){
     $first_name = $_POST ["first_name"];
     $last_name = $_POST ["last_name"];
@@ -40,16 +41,39 @@ else if(isset($_POST['green_box_id'])){
     $db->query($sql);
     }
 
-// the message
-$msg = "First line of text\nSecond line of text";
+else if (isset($_POST['search_first_name']) && isset($_POST['search_last_name'])){
 
-// send email
-mail("jerry.huynh@westtown.edu","My subject",$msg);
+    echo "------------------This is the search result-------------------------------";
+    echo "<table>";
+    echo "<tr>";
+        echo "<th>ID</th>";
+        echo "<th>Last Name</th>";
+        echo "<th>First Name</th>";
+        echo "<th>Green Box ID</th>";
+        echo "<th>Returning Date</th>";
+        echo "<th>Returned</th>";
+    echo "</tr>";
+    $search_first_name = $_POST['search_first_name'];
+    $search_last_name = $_POST['search_last_name'];
+    $sql = "SELECT * FROM students_2024 WHERE first_name = '$search_first_name' ";
+    $result = $db->query($sql);
+    while($row = $result->fetch_assoc()) {
+        echo "<tr>";
+                echo "<td>" . $row["person_id"] . "</td>" ;
+                echo "<td>" . $row["last_name"]. "</td>";
+                echo "<td>". $row["first_name"]. "</td>";
+                echo "<td>". $row["green_box_id"]. "</td>";
+                echo "<td>". $row["return_date"]. "</td>";
+                echo "<td >". "<button id='row_button' type='button' onclick=deleteRow(". $row["green_box_id"].")></button>". "</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+}
 ?>
 
 
 <table id="students_returning_today">
-    Table of Students that need to Return today. 
+    ----------------------Table of Students that need to Return today--------------------------
     <?php
     $today_date = date("Y-m-d");
         echo "<tr>";
@@ -80,7 +104,7 @@ mail("jerry.huynh@westtown.edu","My subject",$msg);
 
 
 <table id="students_green_box">
-    Table of Every Students that need to Return the green box. 
+    ------------------------------Table of Every Students that need to Return the green box----------------------------------
     <?php
         echo "<tr>";
                 echo "<th>ID</th>";
@@ -109,6 +133,7 @@ mail("jerry.huynh@westtown.edu","My subject",$msg);
 </table>
 
 
+
 <form id = "Updateform" action="green_box.php"  method="post" >
     Updating Form <br>
     first name: <input type="text" name="first_name"  placeholder="first name ..."  required> <br>
@@ -120,5 +145,10 @@ mail("jerry.huynh@westtown.edu","My subject",$msg);
     Returning Form <br>
     green box id: <input type="text" name="green_box_id" placeholder="green box ... " required> <br>
     <input type="submit" name = "submit2" > 
+</form>
+<form id = "Searchform" action= "green_box.php" method = "post" >
+    Search first name <input type = "text" name= "search_first_name" placeholder="first name ..."> <br>
+    Search last name <input type = "text" name= "search_last_name" placeholder="last name ..."> <br>
+    <input type= "submit" > 
 </form>
 
