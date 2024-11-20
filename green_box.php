@@ -17,7 +17,7 @@
     </head>
 
     <body>
-        <?php include('header.php');?> 
+    <?php include('header/header.php');?>
 
 <?php
 $db = new mysqli('localhost', 'root', '', 'test');

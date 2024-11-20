@@ -1,0 +1,144 @@
+@media (max-width:900px) {
+    /*
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: #5e8eb4;
+    }
+    
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 10px 16px;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    li {
+        float: left;
+    }
+    */
+
+
+    .menuBar {
+        display:none;
+    }
+    .menuBarMobile {
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+      position: relative;
+    }
+    
+    .topnav #links {
+      display: none;
+    }
+    
+    .topnav a {
+      color: white;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 20px;
+      display: block;
+    }
+    
+    .topnav a.icon {
+      background: black;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding-bottom: 14px;
+    }
+    
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    #active {
+      background-color: #5e8eb4;
+      color: white;
+    }
+}
+
+@media (min-width:900px) {
+    .menuBar {
+        display: block;
+    }
+
+    .menuBarMobile {
+        display: none;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        justify-content: space-around;
+        background-color: #5e8eb4;
+    }
+    
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 32px;
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+    li {
+        float: left;
+    }
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, auto) 1fr;
+    grid-column-gap: 5px;
+    justify-items: center;
+    color: white;
+
+}
+
+header h1 {
+    font-size: 4em;
+    margin: auto;
+    text-align: center;
+}
+
+.logo {
+    margin-left: 8px;
+    margin-right: auto;
+    height: 128px;
+    width: 128px;
+}
+
+.titleContainer {
+    align-self: center;
+}
+
+.menuBar {
+    margin-top: 20px;
+}
+
+li a:hover {
+    background-color: #333;
+}
